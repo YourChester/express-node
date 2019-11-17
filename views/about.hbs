@@ -10,3 +10,15 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+{{#if messages.length}}
+  {{#each messages}}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{email}}</h5>
+        <p class="card-text">{{message}}</p>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>Собщений нет</p>
+{{/if}}

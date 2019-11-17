@@ -5,9 +5,11 @@ const Massage = require('../models/message')
 
 route.get(
   '/',
-  (req, res) => {
+  async (req, res) => {
+    const messages = await Massage.getAll()
     res.render('about', {
       about: true,
+      messages,
     });
   }
 );
